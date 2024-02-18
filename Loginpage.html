@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 300px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+
+    .form-group.switch-form {
+      text-align: center;
+    }
+
+    .form-group.switch-form a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .form-group.switch-form a:hover {
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="loginForm">
+      <h2>Login</h2>
+      <form action="#">
+        <div class="form-group">
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" name="loginEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" name="loginPassword" required>
+        </div>
+        <div class="form-group">
+          <button type="submit"><a href="index.html">Login</a></button/--------------------------------3265>
+        </div>
+        <div class="form-group switch-form">
+          Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a>
+        </div>
+      </form>
+    </div>
+    <div id="signupForm" class="hidden">
+      <h2>Sign Up</h2>
+      <form action="index.html">
+        <div class="form-group">
+          <label for="signupName">Name:</label>
+          <input type="text" id="signupName" name="signupName" required>
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Email:</label>
+          <input type="email" id="signupEmail" name="signupEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password:</label>
+          <input type="password" id="signupPassword" name="signupPassword" required>
+        </div>
+        <div class="form-group">
+          <button type="submit"><a href="index.html"></a>Sign Up</button>
+        </div>
+        <div class="form-group switch-form">
+          Already have an account? <a href="#" onclick="toggleForm()">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      var loginForm = document.getElementById("loginForm");
+      var signupForm = document.getElementById("signupForm");
+
+      if (loginForm.classList.contains("hidden")) {
+        loginForm.classList.remove("hidden");
+        signupForm.classList.add("hidden");
+      } else {
+        loginForm.classList.add("hidden");
+        signupForm.classList.remove("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
